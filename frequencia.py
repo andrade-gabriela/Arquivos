@@ -1,4 +1,3 @@
-from cgitb import text
 import os
 import requests
 import matplotlib.pyplot as mat
@@ -32,10 +31,12 @@ def main():
     #         if c.isalpha() or c == ' ':
     #             texto_limpo += c
     #     return texto_limpo
+
     def gerar_grafico_letras(frequencia_letras):
-        rotulos, valores = zip(*frequencia_letras.most_common(15))
+        rotulos, valores = zip(*frequencia_letras.most_common(10))
         mat.title('Frequência de letras em português')
         mat.pie(valores, labels=rotulos, autopct='%1.0f%%', startangle=90)
+        mat.show()
 
     # bloco - Iniciar
     def iniciar():
