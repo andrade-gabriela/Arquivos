@@ -1,14 +1,8 @@
 from cgitb import text
 import os
 import requests
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as mat
 from collections import Counter
-
-# main
-# verifica se existe 
-# fazer upload 
-# fazer a frequencia 
-# construir grafico
 
 def main():
     # bloco - Arquivos
@@ -39,10 +33,11 @@ def main():
     #         if c.isalpha() or c == ' ':
     #             texto_limpo += c
     #     return texto_limpo
+    def gerar_grafico():
+
 
     # bloco - Iniciar
     def iniciar():
-
         nome_arquivo = 'domcasmurro.txt'
         link = "https://www.gutenberg.org/files/55752/55752-8.txt"
         verificar_existe(nome_arquivo, link)
