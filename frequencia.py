@@ -24,7 +24,6 @@ def main():
             texto = arquivo.read().lower()
         letras = [item for item in texto if item.isalpha()]
         frequencia = Counter(letras)
-        print(frequencia)
         return frequencia
 
     # def limpar_string(texto):
@@ -33,15 +32,18 @@ def main():
     #         if c.isalpha() or c == ' ':
     #             texto_limpo += c
     #     return texto_limpo
-    def gerar_grafico():
-
+    def gerar_grafico_letras(frequencia_letras):
+        rotulos, valores = zip(*frequencia_letras.most_common(15))
+        mat.title('Frequência de letras em português')
+        mat.pie(valores, labels=rotulos, autopct='%1.0f%%', startangle=90)
 
     # bloco - Iniciar
     def iniciar():
         nome_arquivo = 'domcasmurro.txt'
         link = "https://www.gutenberg.org/files/55752/55752-8.txt"
         verificar_existe(nome_arquivo, link)
-        calcular_frequencia(nome_arquivo)
+        frequencia_letras = calcular_frequencia(nome_arquivo)
+        gerar_grafico_letras(frequencia_letras)
 
     iniciar()
 
